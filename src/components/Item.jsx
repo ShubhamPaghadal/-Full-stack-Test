@@ -1,9 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { UpdateFollower } from 'react-mouse-follower'
 
 const Item = ({product}) => {
   return (
-    <div className='group relative'>
+    <UpdateFollower
+      mouseOptions={{
+        visible: false,
+      }}
+    >
+    <div className='group relative cursor-pointer'>
       <Link to={`/products/${product?.id}`}>
       <div className='relative aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-800/50 lg:aspect-none lg:h-80 h-96 border border-gray-700/50'>
         <img
@@ -25,6 +31,7 @@ const Item = ({product}) => {
         <p className='text-sm font-medium text-foreground'>${product?.new_price}</p>
       </div>
     </div>
+    </UpdateFollower>
   )
 }
 
